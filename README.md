@@ -1,12 +1,13 @@
 # Data enumerator lib
-This library helps to manipulate the 2d arrays. User can execute functions like addition, substraction, multipliaction and other operations on square matrix and determinant.
+This library helps to manipulate the 2d arrays. User can execute functions like addition, substraction, multipliaction and other operations on square matrix and determinant. It also helps user to get equation of graph using arrays, which helps to predict the next value.
 
 ## It's uses:-
 *	Used to collect user data and process it according to user requirements.
 *	Can be used in create recommendation system.
 *	Used in deep learning model training.
 *	Used in unsupervised machine learning projects.
-
+* Used in predicting data
+* 
 ## Functions :-
 
 ### To add two matrix
@@ -143,6 +144,19 @@ Output :-
 ```
 [[10,20],
 [30,35]]
+```
+### Graphical equation handling
+```
+x_data = [1, 2, 3, 4, 5]
+y_data = [2, 4, 6, 8, 10]
+
+graph_fitter = graphEQ(x_data, y_data)
+
+graph_fitter.fit_linear()
+print(graph_fitter.get_equation())  # Output: y = 2.00x
+
+graph_fitter.fit_polynomial(2)
+print(graph_fitter.get_equation())  # Output: y = 0.00x^2 + 2.00x
 ```
 
 ## Languages used:
