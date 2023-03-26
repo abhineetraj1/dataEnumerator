@@ -74,7 +74,34 @@ class determinant:
 			for j in deteminant[i]:
 				deteminant[i][j] = deteminant[i][j]*n
 		return deteminant
-
+class graphEQ:
+    def __init__(self, x_data, y_data):
+    self.x_data = x_data
+    self.y_data = y_data
+    self.equation = None
+    def fit_linear(self):
+        n = len(self.x_data)
+        sum_x = sum(self.x_data)
+        sum_y = sum(self.y_data)
+        sum_xy = sum([x * y for x, y in zip(self.x_data, self.y_data)])
+        sum_x_squared = sum([x ** 2 for x in self.x_data])
+        a = (n * sum_xy - sum_x * sum_y) / (n * sum_x_squared - sum_x ** 2)
+        b = (sum_y - a * sum_x) / n
+        self.equation = f"y = {a:.2f}x + {b:.2f}"
+    def fit_polynomial(self, degree):
+        def poly_func(x, *coefficients):
+            result = 0
+            for i in range(len(coefficients)):
+                result += coefficients[i] * (x ** (degree - i))
+            return result
+        p0 = [0.0] * (degree + 1)
+        coefficients, _ = curve_fit(poly_func, self.x_data, self.y_data, p0=p0)
+        coefficients_str = [f"{c:.2f}" if c >= 0 else f"- {-c:.2f}" for c in coefficients]
+        self.equation = f"y = {coefficients_str[0]}x^{degree}"
+        for i in range(1, len(coefficients)):
+            self.equation += f" + {coefficients_str[i]}x^{degree - i}"
+    def get_equation(self):
+        return self.equation
 class info:
 	def lincense():
 		print("""Copyright (c) 2022 Abhineet Raj and others
