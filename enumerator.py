@@ -1,3 +1,4 @@
+#This class is for handling mathematical operation in matrix
 class matrix:
 	def add(matrix1, matrix2):
 		l_y, l_x,g= len(matrix1), len(matrix1[0]),[]
@@ -53,6 +54,7 @@ class matrix:
 		else:
 			return "Matrix type should be square matrix"
 
+#This class is for handling mathematical operation (multiplication, addition, divide, substract) in determinant
 class determinant:
 	def multiplyNum(deteminant,n):
 		for i in deteminant:
@@ -74,6 +76,8 @@ class determinant:
 			for j in deteminant[i]:
 				deteminant[i][j] = deteminant[i][j]*n
 		return deteminant
+
+#This class is for getting the equation of graph, where values of y axis is stored in arrays
 class graphEQ:
     def __init__(self, x_data, y_data):
     self.x_data = x_data
@@ -102,9 +106,10 @@ class graphEQ:
             self.equation += f" + {coefficients_str[i]}x^{degree - i}"
     def get_equation(self):
         return self.equation
+
 class info:
 	def lincense():
-		print("""Copyright (c) 2022 Abhineet Raj and others
+		print("""Copyright (c) 2023 Abhineet Raj and others
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
