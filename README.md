@@ -1,14 +1,22 @@
 # Data enumerator lib
 This library helps to manipulate the 2d arrays. User can execute functions like addition, substraction, multipliaction and other operations on square matrix and determinant. It also helps user to get equation of graph using arrays, which helps to predict the next value.
 
-## It's uses:-
+## Functionality:-
 *	Used to collect user data and process it according to user requirements.
 *	Can be used in create recommendation system.
 *	Used in deep learning model training.
 *	Used in unsupervised machine learning projects.
 * Used in predicting data
-* 
-## Functions :-
+
+## Installation
+* Run the following command
+```
+git clone https://github.com/abhineetraj1/dataEnumerator
+cd dataEnumerator
+```
+* Save the test file in this folder in order to import class and functions from enumerator
+
+## Docs :-
 
 ### To add two matrix
 
@@ -162,5 +170,5 @@ print(graph_fitter.get_equation())  # Output: y = 0.00x^2 + 2.00x
 ## Languages used:
 <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>
 
-## Author
+## Developer
 *	[abhineetraj1](http://github.com/abhineetraj1)
